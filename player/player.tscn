@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://mnndrupwl8in"]
+
+[ext_resource type="Script" uid="uid://cwfmt83bvkvfd" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Texture2D" uid="uid://darrq4lp21x6e" path="res://assets/CasadastraphobiaPlayer.png" id="2_rkbax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(12, 29)
+
+[node name="Player" type="CharacterBody2D" unique_id=1355774623]
+script = ExtResource("1_oul6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=652933170]
+scale = Vector2(2, 2)
+texture = ExtResource("2_rkbax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2088550487]
+position = Vector2(3, 1.5)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1719202074]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+
+[node name="RoofChecker" type="RayCast2D" parent="." unique_id=702141016]
+scale = Vector2(10, 10)
+target_position = Vector2(0, -2000)
