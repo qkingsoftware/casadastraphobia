@@ -1,31 +1,59 @@
-﻿[gd_scene format=3 uid="uid://ddo0574jcdyvw"]
+[gd_scene format=3 uid="uid://ddo0574jcdyvw"]
 
 [ext_resource type="Script" uid="uid://cox7pm5vxovh5" path="res://scripts/menu/menu.gd" id="1_menu"]
-[ext_resource type="Script" path="res://scripts/menu/effect.gd" id="2_effect"]
+[ext_resource type="Script" uid="uid://2cwah6kycnxv" path="res://scripts/menu/effect.gd" id="2_effect"]
+[ext_resource type="FontFile" uid="uid://cwewptax75xtq" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://bpafmwd35tnfo" path="res://assets/CASADASTRAPHOBIA.png" id="4_art"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uubjt"]
-bg_color = Color(0.18, 0.12, 0.28, 0.9)
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.2, 0.14, 0.32, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.52, 0.38, 0.78, 0.9)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-expand_margin_left = 8.0
-expand_margin_top = 4.0
-expand_margin_right = 8.0
-expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yleq"]
-bg_color = Color(0.12, 0.08, 0.18, 0.9)
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.12, 0.08, 0.2, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.25, 0.52, 0.7)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-expand_margin_left = 8.0
-expand_margin_top = 4.0
-expand_margin_right = 8.0
-expand_margin_bottom = 4.0
 
-[node name="Menu" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.32, 0.22, 0.52, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.65, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="Menu" type="Control" unique_id=1940895955]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,69 +62,100 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_menu")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1771923435]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0.04, 0.02, 0.09, 1)
 script = ExtResource("2_effect")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=510390435]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 48
-theme_override_constants/margin_top = 48
-theme_override_constants/margin_right = 48
-theme_override_constants/margin_bottom = 48
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 60
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1736795621]
 layout_mode = 2
+theme_override_constants/separation = 60
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1348517224]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.2
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=355449597]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Stardance"
+theme_override_colors/font_color = Color(0.96, 0.94, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.08, 0.04, 0.16, 0.9)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 44
+text = "CASADASTRAPHOBIA"
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Subtitle" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1130771581]
 layout_mode = 2
-theme_override_constants/margin_top = 24
+theme_override_colors/font_color = Color(0.68, 0.62, 0.82, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "The irrational fear of falling into the sky."
+autowrap_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=604683265]
+custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
-theme_override_constants/separation = 12
 
-[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(160, 40)
+[node name="ButtonsVBox" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=72519961]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 14
+
+[node name="Start" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/ButtonsVBox" unique_id=1207688381]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_uubjt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5yleq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
 text = "Start Game"
 
-[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(160, 40)
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/ButtonsVBox" unique_id=1152421890]
+custom_minimum_size = Vector2(220, 46)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_5yleq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uubjt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hover")
 text = "Quit"
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=1134447624]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=452082962]
+texture_filter = 1
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("4_art")
 expand_mode = 1
 stretch_mode = 5
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonsVBox/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/ButtonsVBox/Quit" to="." method="_on_quit_pressed"]

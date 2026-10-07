@@ -1,4 +1,4 @@
-﻿extends CharacterBody2D
+extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -300.0
@@ -78,6 +78,5 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func die_in_the_sky()
-		return:
+func die_in_the_sky():
 	get_tree().reload_current_scene()
