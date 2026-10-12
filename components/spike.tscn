@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://depvdn4ly1wgy"]
+
+[ext_resource type="Script" uid="uid://jvvocecwco7f" path="res://components/spike.gd" id="1_rlul2"]
+[ext_resource type="Texture2D" uid="uid://bpafmwd35tnfo" path="res://assets/CASADASTRAPHOBIA.png" id="2_ivkfj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(65, 63)
+
+[node name="Spike" type="Area2D" unique_id=1918231507]
+script = ExtResource("1_rlul2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=231130126]
+texture = ExtResource("2_ivkfj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=234942508]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1828489148]

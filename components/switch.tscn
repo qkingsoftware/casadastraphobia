@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cf0o2164alru6"]
+
+[ext_resource type="Script" uid="uid://8rx5m8rqknjw" path="res://components/switch.gd" id="1_3y2ws"]
+[ext_resource type="Texture2D" uid="uid://c4jspvrs1o8v3" path="res://assets/tileset.png" id="2_yn82c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn82c"]
+atlas = ExtResource("2_yn82c")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6a2d"]
+atlas = ExtResource("2_yn82c")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn82c")
+}],
+"loop": 0,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6a2d")
+}],
+"loop": 0,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 5.0
+
+[node name="Switch" type="Area2D" unique_id=220649421]
+script = ExtResource("1_3y2ws")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1697609471]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"off"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1654314783]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_g4v7s")

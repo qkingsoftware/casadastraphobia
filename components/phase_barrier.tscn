@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dtngngdrsir07"]
+
+[ext_resource type="Script" uid="uid://db8p0di7erx2a" path="res://components/phase_barrier.gd" id="1_lusn5"]
+[ext_resource type="Texture2D" uid="uid://c34c4i3us047o" path="res://assets/phase.png" id="1_qq4s8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(40, 40)
+
+[node name="PhaseBarrier" type="StaticBody2D" unique_id=670540057]
+script = ExtResource("1_lusn5")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1873258665]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qq4s8")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=252562736]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_g4v7s")

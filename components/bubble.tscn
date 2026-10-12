@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cdsf16vgkun33"]
+
+[ext_resource type="Script" uid="uid://spol5q75r76e" path="res://components/bubble.gd" id="1_em2ik"]
+[ext_resource type="Texture2D" uid="uid://c4jspvrs1o8v3" path="res://assets/tileset.png" id="2_o6n6x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrgug"]
+atlas = ExtResource("2_o6n6x")
+region = Rect2(48, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77p2i"]
+atlas = ExtResource("2_o6n6x")
+region = Rect2(64, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxf1h"]
+atlas = ExtResource("2_o6n6x")
+region = Rect2(64, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6n6x"]
+atlas = ExtResource("2_o6n6x")
+region = Rect2(48, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrgug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77p2i")
+}],
+"loop": 1,
+"name": &"float",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxf1h")
+}],
+"loop": 0,
+"name": &"pop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6n6x")
+}],
+"loop": 0,
+"name": &"spawn",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 9.055386
+
+[node name="Bubble" type="Area2D" unique_id=298141375]
+script = ExtResource("1_em2ik")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1204060609]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"float"
+frame_progress = 0.93938285
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1392537374]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2093639318]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=873178167]
+shape = SubResource("CircleShape2D_yf5fn")

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bhtsags8wsvnx"]
+
+[ext_resource type="Script" uid="uid://byodjl4v31a7c" path="res://components/conveyor_tread.gd" id="1_6rxid"]
+[ext_resource type="Texture2D" uid="uid://c70lvvqidnonx" path="res://assets/arrow.png" id="2_hw606"]
+[ext_resource type="Texture2D" uid="uid://cuas3xh6o0re2" path="res://assets/conveyor.png" id="3_vvftm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(39, 40)
+
+[node name="ConveyorTread" type="StaticBody2D" unique_id=1155424353]
+script = ExtResource("1_6rxid")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=2047879743]
+texture = ExtResource("2_hw606")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=361313192]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_vvftm")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=613774946]
+position = Vector2(20.5, 20)
+shape = SubResource("RectangleShape2D_g4v7s")

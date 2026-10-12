@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://hn8kurqxnjru"]
+
+[ext_resource type="Script" uid="uid://b7g7113j1q0js" path="res://components/one_way_wall.gd" id="1_fvhvn"]
+[ext_resource type="Texture2D" uid="uid://b02bevcwjpalw" path="res://assets/onewaywall.png" id="2_maiin"]
+[ext_resource type="Texture2D" uid="uid://c70lvvqidnonx" path="res://assets/arrow.png" id="3_t70bb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(10, 40)
+
+[node name="OneWayWall" type="AnimatableBody2D" unique_id=1166034364]
+script = ExtResource("1_fvhvn")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1360048201]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_maiin")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=1328604907]
+texture = ExtResource("3_t70bb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=671823120]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="EntrySensor" type="Area2D" parent="." unique_id=970901357]
+
+[node name="SensorShape" type="CollisionShape2D" parent="EntrySensor" unique_id=1451933237]
+position = Vector2(5, 20)
+shape = SubResource("RectangleShape2D_yf5fn")
+debug_color = Color(0.90722907, 0.00012513995, 0.74245435, 0.41960785)

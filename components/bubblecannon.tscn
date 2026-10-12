@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c5ri51k8pjdkb"]
+
+[ext_resource type="Script" uid="uid://iifh7576xb88" path="res://components/bubblecannon.gd" id="1_oltu6"]
+[ext_resource type="Texture2D" uid="uid://c4jspvrs1o8v3" path="res://assets/tileset.png" id="2_l1wr4"]
+[ext_resource type="PackedScene" uid="uid://cdsf16vgkun33" path="res://components/bubble.tscn" id="2_wewff"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wewff"]
+atlas = ExtResource("2_l1wr4")
+region = Rect2(96, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agm6f"]
+atlas = ExtResource("2_l1wr4")
+region = Rect2(80, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wewff")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agm6f")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(16, 16)
+
+[node name="BubbleCannon" type="StaticBody2D" unique_id=1681223028]
+script = ExtResource("1_oltu6")
+bubble_scene = ExtResource("2_wewff")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1254358028]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"off"
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1908259309]
+position = Vector2(8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1470995021]
+shape = SubResource("RectangleShape2D_g4v7s")

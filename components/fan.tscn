@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://lkqbhnatygwa"]
+
+[ext_resource type="Script" uid="uid://dfwghhjraya4u" path="res://components/fan.gd" id="1_l6x1u"]
+[ext_resource type="Texture2D" uid="uid://c4jspvrs1o8v3" path="res://assets/tileset.png" id="2_c7xiu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7xiu"]
+size = Vector2(16, 100)
+
+[node name="Fan" type="Area2D" unique_id=1142980046]
+script = ExtResource("1_l6x1u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=204826587]
+texture = ExtResource("2_c7xiu")
+region_enabled = true
+region_rect = Rect2(0, 80, 16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=838096513]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1122472281]
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145521242]
+position = Vector2(0, -50)
+shape = SubResource("RectangleShape2D_c7xiu")

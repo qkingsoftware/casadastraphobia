@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c7fnajcc8bicd"]
+
+[ext_resource type="Texture2D" uid="uid://dehjs1xky2bce" path="res://assets/speedzone.png" id="1_56ij0"]
+[ext_resource type="Script" uid="uid://beobh3u78kgvg" path="res://components/boost_zone.gd" id="1_xis6o"]
+[ext_resource type="Texture2D" uid="uid://c70lvvqidnonx" path="res://assets/arrow.png" id="2_xis6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tn508"]
+size = Vector2(39, 40)
+
+[node name="BoostZone" type="Area2D" unique_id=128683556]
+script = ExtResource("1_xis6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=716661873]
+position = Vector2(20.5, 20)
+shape = SubResource("RectangleShape2D_tn508")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1137817552]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_56ij0")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=2145364274]
+texture = ExtResource("2_xis6o")

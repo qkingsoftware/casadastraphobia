@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cwj555mslm80e"]
+
+[ext_resource type="Script" uid="uid://ccp0ept2b7ivg" path="res://components/gravity_zone.gd" id="1_3xkcf"]
+[ext_resource type="Texture2D" uid="uid://fd4j3ub2rsdu" path="res://assets/nineslice.png" id="2_3xkr7"]
+
+[node name="GravityZone" type="Area2D" unique_id=242537059 groups=["gravityzone"]]
+collision_layer = 4294967295
+collision_mask = 4294967295
+script = ExtResource("1_3xkcf")
+texture = ExtResource("2_3xkr7")

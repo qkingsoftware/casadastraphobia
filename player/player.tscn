@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwfmt83bvkvfd" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://darrq4lp21x6e" path="res://assets/CasadastraphobiaPlayer.png" id="2_rkbax"]
+[ext_resource type="PackedScene" uid="uid://c30n2077dxxyf" path="res://player/hud.tscn" id="3_g1dw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(12, 29)
@@ -17,10 +18,13 @@ texture = ExtResource("2_rkbax")
 position = Vector2(3, 1.5)
 shape = SubResource("RectangleShape2D_yf5fn")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1719202074]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1719202074 groups=["player"]]
+zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 
 [node name="RoofChecker" type="RayCast2D" parent="." unique_id=702141016]
 scale = Vector2(10, 10)
 target_position = Vector2(0, -2000)
+
+[node name="hud" parent="." unique_id=723981641 instance=ExtResource("3_g1dw6")]

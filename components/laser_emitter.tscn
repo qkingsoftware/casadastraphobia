@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://1y880mn41b5m"]
+
+[ext_resource type="Texture2D" uid="uid://c4jspvrs1o8v3" path="res://assets/tileset.png" id="1_8ai3p"]
+[ext_resource type="Script" uid="uid://d2gtkjrsggclq" path="res://components/laser_emitter.gd" id="1_ni0iv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni0iv"]
+atlas = ExtResource("1_8ai3p")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlbsl"]
+atlas = ExtResource("1_8ai3p")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni0iv")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlbsl")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(632, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ni0iv"]
+size = Vector2(16, 16)
+
+[node name="LaserEmitter" type="Area2D" unique_id=696217044]
+script = ExtResource("1_ni0iv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2134128572]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"on"
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=488093590]
+target_position = Vector2(100, 0)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=826385319]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=819510150]
+position = Vector2(6, 0)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=851984089]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1900946292]
+shape = SubResource("RectangleShape2D_ni0iv")

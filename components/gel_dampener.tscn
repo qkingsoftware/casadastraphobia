@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dk2rsoycrsx23"]
+
+[ext_resource type="Script" uid="uid://b6nhb00vlhqhu" path="res://components/gel_dampener.gd" id="1_202sn"]
+[ext_resource type="Texture2D" uid="uid://xufhg1t7gu35" path="res://assets/gel.png" id="1_pcwn5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(40, 40)
+
+[node name="GelDampener" type="Area2D" unique_id=1549259175]
+script = ExtResource("1_202sn")
+metadata/_edit_group_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1771010156]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_pcwn5")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2102426853]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_g4v7s")
