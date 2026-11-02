@@ -12,4 +12,4 @@ The game turns that exact phobia into this:
 
 * Open Sky = Fall Up The moment you step outside and are exposed to an open sky, gravity reverses and you start falling upward.
 * Find Cover! You have to explore the world without falling up. Seek shelter under objects.
-* Prototype Elements:** This build includes everything needed to create the levels, fun little fans, switches and a lot more!
+* Prototype Elements: This build includes everything needed to create the levels, fun little fans, switches and a lot more!
